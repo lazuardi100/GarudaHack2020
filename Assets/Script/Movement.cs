@@ -5,13 +5,15 @@ using UnityEngine;
 public class Movement : MonoBehaviour
 {
     public string namaPath;
+    public int speed;
     // Start is called before the first frame update
     void Start()
     {
         iTween.MoveTo(gameObject, iTween.Hash("path", iTweenPath.GetPath(namaPath),
-            "time", 5, 
-            "easetype", iTween.EaseType.easeInOutSine,
-            "looptype",iTween.LoopType.loop ));
+            "time", speed, 
+            "easetype", iTween.EaseType.linear,
+            "looptype",iTween.LoopType.loop,
+            "delay", 0f));
  
     }
 
